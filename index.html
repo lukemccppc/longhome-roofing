@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Long Home | Roof Replacement – Free In-Home Quote</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --blue: #0554A0;
+    --blue-dark: #04408A;
+    --blue-light: #0665BE;
+    --yellow: #FFCA2F;
+    --yellow-dark: #E8B600;
+    --white: #ffffff;
+    --gray-50: #F8F9FA;
+    --gray-100: #F1F3F5;
+    --gray-200: #E9ECEF;
+    --gray-400: #ADB5BD;
+    --gray-600: #6C757D;
+    --gray-800: #343A40;
+    --dark: #0D1B2A;
+    --font-head: 'Oswald', sans-serif;
+    --font-body: 'Source Sans 3', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--font-body); color: var(--gray-800); font-size: 16px; line-height: 1.6; }
+
+  /* ── ANNOUNCEMENT BAR ── */
+  .announce-bar {
+    background: var(--blue);
+    color: var(--white);
+    text-align: center;
+    padding: 10px 16px;
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.02em;
+  }
+  .announce-bar span { color: var(--yellow); }
+
+  /* ── HEADER ── */
+  .site-header {
+    background: var(--white);
+    padding: 14px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .site-header img { height: 52px; }
+  .btn-header {
+    background: var(--yellow);
+    color: var(--dark);
+    font-family: var(--font-head);
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: 0.04em;
+    padding: 12px 28px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .btn-header:hover { background: var(--yellow-dark); transform: translateY(-1px); }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    background: var(--dark);
+    min-height: 580px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute; inset: 0;
+    background-image: url('https://images.unsplash.com/photo-1632759145352-27ec5ddb8af4?w=1400&q=80');
+    background-size: cover;
+    background-position: center top;
+    opacity: 0.42;
+  }
+  .hero-inner {
+    position: relative;
+    z-index: 2;
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 60px 40px;
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    gap: 60px;
+    align-items: center;
+    width: 100%;
+  }
+  .hero-tag {
+    display: inline-block;
+    background: var(--yellow);
+    color: var(--dark);
+    font-family: var(--font-head);
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 5px 14px;
+    border-radius: 3px;
+    margin-bottom: 18px;
+  }
+  .hero h1 {
+    font-family: var(--font-head);
+    font-size: clamp(32px, 4vw, 52px);
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.08;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    letter-spacing: 0.01em;
+  }
+  .hero h1 .accent { color: var(--yellow); }
+  .hero-sub {
+    color: rgba(255,255,255,0.82);
+    font-size: 17px;
+    max-width: 480px;
+    margin-bottom: 28px;
+    line-height: 1.65;
+  }
+  .hero-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .badge {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.22);
+    color: var(--white);
+    border-radius: 40px;
+    padding: 7px 16px;
+    font-size: 13px;
+    font-weight: 600;
+    backdrop-filter: blur(4px);
+  }
+
+  /* FORM CARD */
+  .form-card {
+    background: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 12px 48px rgba(0,0,0,0.28);
+    overflow: hidden;
+  }
+  .form-card-head {
+    background: var(--yellow);
+    padding: 14px 24px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .form-card-head .fch-icon { font-size: 18px; }
+  .form-card-head p {
+    font-family: var(--font-head);
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--dark);
+  }
+  .form-card-body { padding: 22px 24px 20px; }
+  .form-card-body h3 {
+    font-family: var(--font-head);
+    font-size: 22px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--dark);
+    margin-bottom: 4px;
+    line-height: 1.15;
+  }
+  .form-sub { color: var(--gray-600); font-size: 13px; margin-bottom: 18px; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 10px; }
+  .form-group { display: flex; flex-direction: column; gap: 4px; margin-bottom: 10px; }
+  .form-group label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gray-600); }
+  .form-group input, .form-group select {
+    border: 1.5px solid var(--gray-200);
+    border-radius: 4px;
+    padding: 10px 12px;
+    font-family: var(--font-body);
+    font-size: 14px;
+    color: var(--gray-800);
+    outline: none;
+    transition: border-color 0.2s;
+    background: var(--white);
+  }
+  .form-group input:focus, .form-group select:focus { border-color: var(--blue); }
+  .form-group input::placeholder { color: var(--gray-400); }
+  .btn-form {
+    width: 100%;
+    background: var(--blue);
+    color: var(--white);
+    font-family: var(--font-head);
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 4px;
+    transition: background 0.2s, transform 0.15s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+  .btn-form:hover { background: var(--blue-dark); transform: translateY(-1px); }
+  .form-disclaimer { font-size: 11px; color: var(--gray-400); text-align: center; margin-top: 10px; line-height: 1.5; }
+
+  /* ── STATS BAR ── */
+  .stats-bar {
+    background: var(--dark);
+    padding: 28px 40px;
+  }
+  .stats-inner {
+    max-width: 1160px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .stat-item { text-align: center; }
+  .stat-num {
+    font-family: var(--font-head);
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--yellow);
+    letter-spacing: 0.02em;
+    line-height: 1.1;
+  }
+  .stat-label { color: rgba(255,255,255,0.65); font-size: 13px; font-weight: 500; margin-top: 3px; }
+  .stat-divider { width: 1px; height: 44px; background: rgba(255,255,255,0.12); }
+
+  /* ── WHY SECTION ── */
+  .why-section {
+    background: var(--white);
+    padding: 80px 40px;
+  }
+  .section-inner { max-width: 1160px; margin: 0 auto; }
+  .section-eyebrow {
+    text-align: center;
+    font-family: var(--font-head);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin-bottom: 12px;
+  }
+  .section-title {
+    text-align: center;
+    font-family: var(--font-head);
+    font-size: clamp(28px, 3.5vw, 40px);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--dark);
+    line-height: 1.15;
+    margin-bottom: 14px;
+  }
+  .section-title .accent { color: var(--blue); }
+  .section-title .yellow { color: var(--yellow-dark); }
+  .section-desc {
+    text-align: center;
+    color: var(--gray-600);
+    max-width: 580px;
+    margin: 0 auto 50px;
+    font-size: 16px;
+    line-height: 1.7;
+  }
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .benefit-card {
+    border: 1.5px solid var(--gray-200);
+    border-radius: 8px;
+    padding: 28px 24px;
+    transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+  }
+  .benefit-card:hover {
+    border-color: var(--blue);
+    box-shadow: 0 6px 24px rgba(5,84,160,0.1);
+    transform: translateY(-3px);
+  }
+  .benefit-icon {
+    width: 48px; height: 48px;
+    background: rgba(5,84,160,0.08);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 16px;
+    color: var(--blue);
+  }
+  .benefit-card h4 {
+    font-family: var(--font-head);
+    font-size: 17px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--dark);
+    margin-bottom: 8px;
+  }
+  .benefit-card p { color: var(--gray-600); font-size: 14px; line-height: 1.65; }
+
+  /* ── MID CTA BANNER ── */
+  .mid-cta {
+    position: relative;
+    padding: 90px 40px;
+    text-align: center;
+    overflow: hidden;
+  }
+  .mid-cta-bg {
+    position: absolute; inset: 0;
+    background-image: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1400&q=80');
+    background-size: cover;
+    background-position: center;
+  }
+  .mid-cta-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, rgba(5,84,160,0.9) 0%, rgba(13,27,42,0.92) 100%);
+  }
+  .mid-cta-inner { position: relative; z-index: 2; max-width: 680px; margin: 0 auto; }
+  .mid-cta-tag {
+    display: inline-block;
+    background: var(--yellow);
+    color: var(--dark);
+    font-family: var(--font-head);
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 5px 14px;
+    border-radius: 3px;
+    margin-bottom: 20px;
+  }
+  .mid-cta h2 {
+    font-family: var(--font-head);
+    font-size: clamp(34px, 5vw, 58px);
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--white);
+    line-height: 1.06;
+    margin-bottom: 10px;
+  }
+  .mid-cta h2 .accent { color: var(--yellow); }
+  .mid-cta p {
+    color: rgba(255,255,255,0.78);
+    font-size: 17px;
+    margin-bottom: 30px;
+    line-height: 1.65;
+  }
+  .btn-mid-cta {
+    display: inline-block;
+    background: var(--yellow);
+    color: var(--dark);
+    font-family: var(--font-head);
+    font-weight: 700;
+    font-size: 17px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 17px 44px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .btn-mid-cta:hover { background: var(--yellow-dark); transform: translateY(-2px); }
+  .mid-cta-fine { color: rgba(255,255,255,0.42); font-size: 12px; margin-top: 16px; }
+
+  /* ── PROCESS ── */
+  .process-section {
+    background: var(--gray-50);
+    padding: 80px 40px;
+  }
+  .steps-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 36px;
+    margin-top: 50px;
+    position: relative;
+  }
+  .steps-grid::before {
+    content: '';
+    position: absolute;
+    top: 36px;
+    left: calc(16.67% + 18px);
+    right: calc(16.67% + 18px);
+    height: 2px;
+    background: var(--gray-200);
+    z-index: 0;
+  }
+  .step-item { text-align: center; position: relative; z-index: 1; }
+  .step-num {
+    width: 72px; height: 72px;
+    background: var(--blue);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-head);
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0 auto 20px;
+    box-shadow: 0 4px 16px rgba(5,84,160,0.3);
+  }
+  .step-item h4 {
+    font-family: var(--font-head);
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--dark);
+    margin-bottom: 10px;
+  }
+  .step-item p { color: var(--gray-600); font-size: 14px; line-height: 1.65; max-width: 240px; margin: 0 auto; }
+
+  /* ── TESTIMONIALS ── */
+  .testimonials-section {
+    background: var(--white);
+    padding: 80px 40px;
+  }
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 50px;
+  }
+  .review-card {
+    background: var(--gray-50);
+    border-radius: 8px;
+    padding: 28px 24px;
+    border: 1.5px solid var(--gray-200);
+  }
+  .stars { color: #F4A500; font-size: 18px; letter-spacing: 2px; margin-bottom: 14px; }
+  .review-text { color: var(--gray-800); font-size: 14px; line-height: 1.7; margin-bottom: 20px; font-style: italic; }
+  .reviewer { display: flex; align-items: center; gap: 12px; }
+  .reviewer-avatar {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-head);
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--white);
+    flex-shrink: 0;
+  }
+  .reviewer-name { font-weight: 700; font-size: 14px; color: var(--dark); }
+  .reviewer-loc { font-size: 12px; color: var(--gray-400); margin-top: 2px; }
+
+  /* ── BOTTOM CTA ── */
+  .bottom-cta {
+    background: var(--dark);
+    padding: 72px 40px;
+    text-align: center;
+  }
+  .bottom-cta h2 {
+    font-family: var(--font-head);
+    font-size: clamp(28px, 4vw, 44px);
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--white);
+    letter-spacing: 0.02em;
+    margin-bottom: 10px;
+  }
+  .bottom-cta h2 .accent { color: var(--yellow); }
+  .bottom-cta p { color: rgba(255,255,255,0.68); font-size: 16px; margin-bottom: 30px; max-width: 520px; margin-left: auto; margin-right: auto; line-height: 1.65; }
+  .btn-bottom {
+    display: inline-block;
+    background: var(--yellow);
+    color: var(--dark);
+    font-family: var(--font-head);
+    font-weight: 700;
+    font-size: 17px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 17px 44px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .btn-bottom:hover { background: var(--yellow-dark); transform: translateY(-2px); }
+
+  /* ── FOOTER ── */
+  .site-footer {
+    background: #07101C;
+    padding: 28px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .site-footer img { height: 36px; }
+  .footer-links { display: flex; gap: 24px; }
+  .footer-links a { color: rgba(255,255,255,0.45); font-size: 13px; text-decoration: none; transition: color 0.2s; }
+  .footer-links a:hover { color: var(--white); }
+  .footer-copy { color: rgba(255,255,255,0.3); font-size: 12px; }
+
+  /* ── MOBILE ── */
+  @media (max-width: 768px) {
+    .announce-bar { font-size: 12px; }
+    .site-header { padding: 12px 16px; }
+    .site-header img { height: 40px; }
+    .btn-header { padding: 10px 18px; font-size: 13px; }
+
+    .hero-inner { grid-template-columns: 1fr; padding: 36px 16px 40px; gap: 32px; }
+    .hero h1 { font-size: 32px; }
+    .hero-sub { font-size: 15px; }
+    .hero-badges { gap: 8px; }
+    .badge { font-size: 12px; padding: 6px 12px; }
+
+    .stats-bar { padding: 24px 16px; }
+    .stat-divider { display: none; }
+    .stats-inner { gap: 16px; justify-content: center; }
+    .stat-num { font-size: 24px; }
+
+    .why-section { padding: 56px 16px; }
+    .benefits-grid { grid-template-columns: 1fr; gap: 16px; }
+
+    .mid-cta { padding: 64px 16px; }
+    .mid-cta h2 { font-size: 34px; }
+
+    .process-section { padding: 56px 16px; }
+    .steps-grid { grid-template-columns: 1fr; gap: 32px; }
+    .steps-grid::before { display: none; }
+
+    .testimonials-section { padding: 56px 16px; }
+    .reviews-grid { grid-template-columns: 1fr; gap: 16px; }
+
+    .bottom-cta { padding: 56px 16px; }
+
+    .site-footer { padding: 24px 16px; flex-direction: column; align-items: flex-start; gap: 14px; }
+    .footer-links { flex-wrap: wrap; gap: 14px; }
+  }
+
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .hero-inner { grid-template-columns: 1fr 360px; gap: 40px; }
+    .benefits-grid { grid-template-columns: repeat(2, 1fr); }
+    .reviews-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>
+</head>
+<body>
+
+<!-- ANNOUNCEMENT BAR -->
+<div class="announce-bar">
+  Limited Time: <span>Special Pricing on New Roof Replacements</span> — Book Your Free In-Home Estimate Today!
+</div>
+
+<!-- HEADER -->
+<header class="site-header">
+  <img src="longhome-logo.webp" alt="Long Home">
+  <a href="#quote-form" class="btn-header">Get Free Quote</a>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-tag">Limited Time Offer</div>
+      <h1>Protect Your Home<br>With a New Roof —<br><span class="accent">Built to Last.</span></h1>
+      <p class="hero-sub">Long Home delivers expert roof replacements with premium materials, master-certified installers, and an industry-leading warranty that keeps you covered for life.</p>
+      <div class="hero-badges">
+        <div class="badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          Lifetime Warranty
+        </div>
+        <div class="badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          Master-Certified Crews
+        </div>
+        <div class="badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          A+ BBB Rated
+        </div>
+      </div>
+    </div>
+
+    <!-- FORM -->
+    <div class="form-card" id="quote-form">
+      <div class="form-card-head">
+        <span class="fch-icon">🏠</span>
+        <p>Special Pricing — Limited Time</p>
+      </div>
+      <div class="form-card-body">
+        <h3>Get Your Free<br>Roofing Quote</h3>
+        <p class="form-sub">No obligation. No pressure. Just savings.</p>
+        <form onsubmit="return false;">
+          <div class="form-row">
+            <div class="form-group">
+              <label>First Name</label>
+              <input type="text" placeholder="John">
+            </div>
+            <div class="form-group">
+              <label>Last Name</label>
+              <input type="text" placeholder="Smith">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" placeholder="john@email.com">
+          </div>
+          <div class="form-group">
+            <label>Phone Number</label>
+            <input type="tel" placeholder="(555) 000-0000">
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Street Address</label>
+              <input type="text" placeholder="123 Main St">
+            </div>
+            <div class="form-group">
+              <label>Zip Code</label>
+              <input type="text" placeholder="ZIP">
+            </div>
+          </div>
+          <button type="submit" class="btn-form">
+            Claim My Free Quote →
+          </button>
+        </form>
+        <p class="form-disclaimer">By submitting, you agree to be contacted by Long Home. We respect your privacy and never share your information.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <div class="stat-num">100K+</div>
+      <div class="stat-label">Happy Homeowners</div>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <div class="stat-num">50+</div>
+      <div class="stat-label">Years in Business</div>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <div class="stat-num">500K+</div>
+      <div class="stat-label">Roofs Installed</div>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <div class="stat-num">BBB A+</div>
+      <div class="stat-label">Accredited Business</div>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <div class="stat-num">4.8/5</div>
+      <div class="stat-label">Customer Rating</div>
+    </div>
+  </div>
+</div>
+
+<!-- WHY SECTION -->
+<section class="why-section">
+  <div class="section-inner">
+    <p class="section-eyebrow">Why Choose Long Home</p>
+    <h2 class="section-title">Protection You Can Trust.<br><span class="yellow">Craftsmanship You Can See.</span></h2>
+    <p class="section-desc">From storm damage to full replacements, our roofing experts deliver lasting protection and beautiful results for every home and every budget.</p>
+
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h4>Lifetime Warranty</h4>
+        <p>Every roof comes with our industry-leading lifetime warranty on materials and workmanship — fully transferable when you sell your home.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+        </div>
+        <h4>Master-Certified Crews</h4>
+        <p>Our roofers are factory-trained and master-certified, ensuring every shingle, ridge, and flashing is installed to manufacturer spec.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <h4>Premium Materials</h4>
+        <p>We use only top-rated architectural shingles and roofing systems from GAF, Owens Corning, and CertainTeed — built for decades of performance.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <h4>Storm Damage Experts</h4>
+        <p>Hail, wind, or water damage? We'll inspect your roof for free, document the damage, and work directly with your insurance company to get you covered.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+        </div>
+        <h4>Clean Job Sites</h4>
+        <p>We use magnetic nail sweepers and tarps to protect your landscaping. We haul away 100% of the old roofing material — nothing left behind.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </div>
+        <h4>Flexible Financing</h4>
+        <p>Don't let budget hold back your home's protection. We offer low monthly payment options so you can get a new roof today and pay over time.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MID CTA BANNER -->
+<section class="mid-cta">
+  <div class="mid-cta-bg"></div>
+  <div class="mid-cta-overlay"></div>
+  <div class="mid-cta-inner">
+    <div class="mid-cta-tag">Current Promotion</div>
+    <h2>Special Pricing<br>On <span class="accent">Every Roof</span><br>Replacement</h2>
+    <p>This is our biggest roofing offer of the season. Get a free in-home inspection and quote today — this deal won't last long and limited slots are available.</p>
+    <a href="#quote-form" class="btn-mid-cta">Claim My Free Quote Now</a>
+    <p class="mid-cta-fine">* Offer valid on new roof replacement projects. Cannot be combined with other offers. Contact us for details.</p>
+  </div>
+</section>
+
+<!-- PROCESS SECTION -->
+<section class="process-section">
+  <div class="section-inner">
+    <p class="section-eyebrow">Simple Process</p>
+    <h2 class="section-title">A New Roof in <span class="accent">3 Easy Steps</span></h2>
+    <p class="section-desc">From your free inspection to a finished, weathertight roof, we handle every detail so you never have to worry.</p>
+    <div class="steps-grid">
+      <div class="step-item">
+        <div class="step-num">1</div>
+        <h4>Free Roof Inspection</h4>
+        <p>We come to your home, inspect the full roof, identify any damage, and provide a detailed replacement quote with zero pressure to buy.</p>
+      </div>
+      <div class="step-item">
+        <div class="step-num">2</div>
+        <h4>Material Selection</h4>
+        <p>Choose from dozens of premium shingle styles, colors, and materials. Our experts help you find the perfect look and performance for your home.</p>
+      </div>
+      <div class="step-item">
+        <div class="step-num">3</div>
+        <h4>Expert Installation</h4>
+        <p>Our master-certified crew installs your new roof efficiently and cleanly, leaving your property spotless and your home fully protected.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials-section">
+  <div class="section-inner">
+    <p class="section-eyebrow">Real Customers. Real Results.</p>
+    <h2 class="section-title">100,000+ Homeowners <span class="accent">Trust Long Home</span></h2>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">"After a hailstorm destroyed our roof, Long Home had us covered — literally. They worked with our insurance, got us a brand new roof in two days, and the crew was incredibly professional."</p>
+        <div class="reviewer">
+          <div class="reviewer-avatar" style="background: var(--blue);">TR</div>
+          <div>
+            <div class="reviewer-name">Tom R.</div>
+            <div class="reviewer-loc">Silver Spring, MD</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">"Long Home replaced our 25-year-old roof and it looks absolutely incredible. The team was on time, finished ahead of schedule, and cleaned up every nail. Couldn't ask for more."</p>
+        <div class="reviewer">
+          <div class="reviewer-avatar" style="background: #2A7A4B;">JM</div>
+          <div>
+            <div class="reviewer-name">Jennifer M.</div>
+            <div class="reviewer-loc">Fairfax, VA</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">"Best roofing company I've ever dealt with. Their lifetime warranty and the quality of the GAF shingles they used gave me total peace of mind. Already recommended them to three neighbors."</p>
+        <div class="reviewer">
+          <div class="reviewer-avatar" style="background: #8B3A8B;">RC</div>
+          <div>
+            <div class="reviewer-name">Robert C.</div>
+            <div class="reviewer-loc">Annapolis, MD</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOTTOM CTA -->
+<section class="bottom-cta">
+  <h2>Ready to Protect<br>Your Home? <span class="accent">Get Started Today.</span></h2>
+  <p>Don't wait for the next storm. Get your free, no-obligation roof inspection and quote today and see how much you can save with Long Home.</p>
+  <a href="#quote-form" class="btn-bottom">Get My Free Quote</a>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <img src="longhome-logo.webp" alt="Long Home">
+  <div class="footer-links">
+    <a href="#">Privacy Policy</a>
+    <a href="#">Terms of Service</a>
+  </div>
+  <p class="footer-copy">© 2026 Long Home. All rights reserved.</p>
+</footer>
+
+<script>
+  document.querySelectorAll('a[href="#quote-form"]').forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      document.getElementById('quote-form').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+</script>
+</body>
+</html>
