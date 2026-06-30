@@ -85,10 +85,13 @@
   }
   .hero-bg {
     position: absolute; inset: 0;
-    background-image: url('https://images.unsplash.com/photo-1632759145352-27ec5ddb8af4?w=1400&q=80');
+    background-image: url('longhome-hero-roof.jpg');
     background-size: cover;
     background-position: center top;
-    opacity: 0.42;
+  }
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to right, rgba(5,30,70,0.82) 0%, rgba(5,30,70,0.55) 100%);
   }
   .hero-inner {
     position: relative;
@@ -537,6 +540,7 @@
 <!-- HERO -->
 <section class="hero">
   <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
   <div class="hero-inner">
     <div class="hero-content">
       <div class="hero-tag">
