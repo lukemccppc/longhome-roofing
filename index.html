@@ -87,7 +87,7 @@
     position: absolute; inset: 0;
     background-image: url('longhome-hero-roof.jpg');
     background-size: cover;
-    background-position: center top;
+    background-position: center center;
   }
   .hero-overlay {
     position: absolute; inset: 0;
@@ -167,6 +167,8 @@
     background: var(--white);
     border-radius: 20px;
     box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+    overflow: hidden;
+    min-width: 0;
   }
   .form-card-body { padding: 24px 24px 28px; }
   .form-card-head {
@@ -196,7 +198,7 @@
   .form-sub { color: var(--gray-600); font-size: 14px; margin-bottom: 22px; text-align: center; }
   .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 0; }
   .form-row-addr { display: grid; grid-template-columns: 3fr 1fr; gap: 12px; margin-bottom: 0; }
-  .form-group { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; }
+  .form-group { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; min-width: 0; }
   .form-group label { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; color: var(--dark); }
   .form-group input {
     border: 1.5px solid #E0E4EA;
@@ -208,6 +210,8 @@
     outline: none;
     background: var(--white);
     transition: border-color 0.2s;
+    width: 100%;
+    min-width: 0;
   }
   .form-group input:focus { border-color: var(--blue); }
   .form-group input::placeholder { color: #C0C7D0; }
@@ -551,8 +555,8 @@
         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
         Summer Savings Event
       </div>
-      <h1>Protect Your Home<br>With a New Roof —<br><span class="accent">Built to Last.</span></h1>
-      <p class="hero-sub">Long Home delivers expert roof replacements with premium materials, master-certified installers, and an industry-leading warranty that keeps you covered for life.</p>
+      <h1>Expert Roof Replacement<br>and Installation</h1>
+      <p class="hero-sub">With over 8 decades of home improvement excellence, we build trust and peace of mind into every new roof installation.</p>
       <div class="hero-price-note">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
         New roofs available from as low as $198/mo
@@ -627,18 +631,13 @@
 <div class="stats-bar">
   <div class="stats-inner">
     <div class="stat-item">
-      <div class="stat-num">100K+</div>
-      <div class="stat-label">Happy Homeowners</div>
+      <div class="stat-num">200K+</div>
+      <div class="stat-label">Happy Customers</div>
     </div>
     <div class="stat-divider"></div>
     <div class="stat-item">
-      <div class="stat-num">50+</div>
-      <div class="stat-label">Years in Business</div>
-    </div>
-    <div class="stat-divider"></div>
-    <div class="stat-item">
-      <div class="stat-num">500K+</div>
-      <div class="stat-label">Roofs Installed</div>
+      <div class="stat-num">80+</div>
+      <div class="stat-label">Years Serving Homeowners</div>
     </div>
     <div class="stat-divider"></div>
     <div class="stat-item">
@@ -647,8 +646,8 @@
     </div>
     <div class="stat-divider"></div>
     <div class="stat-item">
-      <div class="stat-num">4.8/5</div>
-      <div class="stat-label">Customer Rating</div>
+      <div class="stat-num">4.9/5</div>
+      <div class="stat-label">Star Customer Rating</div>
     </div>
   </div>
 </div>
@@ -715,7 +714,7 @@
       <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
       Summer Savings Event
     </div>
-    <h2>Two Great Offers.<br><span class="accent">One Free Call.</span></h2>
+    <h2>We'll inspect your home's<br><span class="accent">roof for free.</span></h2>
     <div class="mid-cta-offers">
       <div class="mid-cta-offer">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
@@ -726,7 +725,7 @@
         New Roof From $198/mo
       </div>
     </div>
-    <p>Schedule your free in-home inspection today. We'll assess your roof, answer every question, and help you find a payment plan that fits your budget.</p>
+    <p>With a 4.9 out of 5-star rating on Google based on nearly 6,000 reviews, our reputation speaks for itself. Customers value the Long commitment to quality materials, expert installation, and a people-first approach that has remained constant across generations.</p>
     <a href="#quote-form" class="btn-mid-cta">Book My Free Inspection</a>
     <p class="mid-cta-fine">* Financing subject to approved credit. Contact us for full terms and details.</p>
   </div>
@@ -762,7 +761,7 @@
 <section class="testimonials-section">
   <div class="section-inner">
     <p class="section-eyebrow">Real Customers. Real Results.</p>
-    <h2 class="section-title">100,000+ Homeowners <span class="accent">Trust Long Home</span></h2>
+    <h2 class="section-title">Hundreds of Thousands of Homeowners <span class="accent">Trust Long Home</span></h2>
     <div class="reviews-grid">
       <div class="review-card">
         <div class="stars">★★★★★</div>
@@ -803,8 +802,8 @@
 
 <!-- BOTTOM CTA -->
 <section class="bottom-cta">
-  <h2>Ready to Protect Your Home?<br><span class="accent">Inspection Is Free. Always.</span></h2>
-  <p>Get your free, no-obligation roof inspection today. If you need a replacement, ask about financing starting at just $198/mo.</p>
+  <h2>Ready to Protect Your Home?<br><span class="accent">Get your free inspection and estimate.</span></h2>
+  <p>Contact us today to get started on your new roof. We look forward to protecting your family and your home.</p>
   <a href="#quote-form" class="btn-bottom">Book My Free Inspection</a>
 </section>
 
